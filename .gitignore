@@ -1,0 +1,26 @@
+# Virtual environment
+venv/
+
+# Environment variables (secrets)
+.env
+
+# ChromaDB persistent storage
+chromadb_data/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Byte-compiled
+*.egg-info/
+dist/
+build/
