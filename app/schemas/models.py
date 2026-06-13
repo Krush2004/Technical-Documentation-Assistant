@@ -1,10 +1,3 @@
-"""
-Pydantic models for API request/response validation.
-
-These define exactly what the API expects and returns.
-FastAPI uses these for automatic validation and docs.
-"""
-
 from pydantic import BaseModel, Field
 from typing import Optional
 

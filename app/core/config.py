@@ -1,23 +1,15 @@
-"""
-Application settings — loaded from .env file.
-
-All configuration lives here so the rest of the code
-just imports `settings` and uses it directly.
-"""
-
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    """Central config. Values come from .env file or environment variables."""
 
     # ---- API Keys ----
     groq_api_key: str = ""
-    tavily_api_key: str = ""  # optional, for web search fallback
+    tavily_api_key: str = ""  
 
     # ---- LLM Models ----
-    llm_model: str = "llama-3.3-70b-versatile"         # main model for generation
-    grading_llm_model: str = "llama-3.1-8b-instant"     # fast model for grading
+    llm_model: str = "llama-3.3-70b-versatile"        
+    grading_llm_model: str = "llama-3.1-8b-instant"     
 
     # ---- Embedding ----
     embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"

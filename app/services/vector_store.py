@@ -1,10 +1,3 @@
-"""
-ChromaDB vector store setup and operations.
-
-Handles creating the collection, adding documents,
-and searching for similar chunks.
-"""
-
 import chromadb
 from app.core.config import settings
 from app.services.embeddings import embed_texts, embed_single

@@ -1,10 +1,3 @@
-"""
-Conditional Edges — routing logic that decides where to go next.
-
-These functions look at the current state and return the name
-of the next node to execute. This is how the graph makes decisions.
-"""
-
 from app.graph.state import GraphState
 from app.core.config import settings
 
@@ -12,7 +5,6 @@ from app.core.config import settings
 def route_after_grading(state: GraphState) -> str:
     """
     Decides what to do after document grading.
-
     Three possible outcomes:
     1. Found relevant docs → generate an answer
     2. No relevant docs, but retries left → rewrite query and try again
@@ -40,7 +32,6 @@ def route_after_grading(state: GraphState) -> str:
 def route_after_hallucination(state: GraphState) -> str:
     """
     Decides what to do after checking if the answer is grounded.
-
     Two outcomes:
     1. Answer is grounded in the context → done (END)
     2. Answer is NOT grounded → route to fallback_response
@@ -58,7 +49,6 @@ def route_after_hallucination(state: GraphState) -> str:
 def route_after_web_search(state: GraphState) -> str:
     """
     Decides what to do after web search.
-
     Two outcomes:
     1. Web search found results → generate answer from them
     2. Web search found nothing → return fallback message

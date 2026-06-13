@@ -1,11 +1,3 @@
-"""
-LLM client setup using Groq.
-
-Provides two LLM instances:
-1. A powerful model for generation and query analysis
-2. A fast model for document grading (cheaper, faster)
-"""
-
 from langchain_groq import ChatGroq
 from app.core.config import settings
 

@@ -1,17 +1,3 @@
-"""
-Workflow Assembly — puts the graph together.
-
-This is where we wire up all the nodes and edges into a
-LangGraph StateGraph. Think of it as connecting the puzzle pieces.
-
-The flow looks like this:
-
-  START → query_analysis → retrieve → grade_documents
-                                         ↓
-                          (relevant?) ──→ check_hallucination → generate → END
-                          (retry?)   ──→ rewrite_query → retrieve (loop back)
-                          (give up?) ──→ web_search → generate or fallback → END
-"""
 
 from langgraph.graph import StateGraph, END
 
@@ -36,7 +22,6 @@ from app.graph.edges import (
 def build_graph() -> StateGraph:
     """
     Build and compile the RAG workflow graph.
-
     Returns a compiled graph ready to use with graph.invoke().
     """
 
@@ -125,7 +110,6 @@ def get_graph():
 def run_query(question: str, session_id: str = "", chat_history: list = None) -> dict:
     """
     Run a question through the RAG pipeline.
-
     This is the main entry point for the graph.
 
     Args:

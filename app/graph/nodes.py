@@ -1,9 +1,4 @@
 """
-Graph Nodes — the actual logic of each step in the RAG pipeline.
-
-Each function takes the current state, does some work,
-and returns a dict with the fields it wants to update.
-
 Nodes:
 1. query_analysis — rewrites the query and classifies it
 2. retrieve — searches the vector store

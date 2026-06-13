@@ -1,10 +1,3 @@
-"""
-LangGraph State Schema.
-
-This defines what data flows between nodes in the graph.
-Think of it as the "shared memory" that every node can read and write to.
-"""
-
 from typing import TypedDict, Annotated
 import operator
 

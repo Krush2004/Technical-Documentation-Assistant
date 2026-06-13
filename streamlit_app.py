@@ -1,7 +1,4 @@
 """
-Streamlit UI — Interactive Q&A Frontend.
-
-A simple chat interface for the RAG Documentation Assistant.
 Run with:  streamlit run streamlit_app.py
 """
 
@@ -10,12 +7,7 @@ import requests
 import streamlit as st
 
 
-# ---- Configuration ----
-
 API_URL = "http://localhost:8000"
-
-
-# ---- Page Setup ----
 
 st.set_page_config(
     page_title="RAG Documentation Assistant",

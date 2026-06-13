@@ -1,9 +1,4 @@
 """
-Document ingestion pipeline.
-
-Loads documents from files or URLs, splits them into chunks,
-and stores them in the vector store.
-
 Chunking Strategy:
 - We use RecursiveCharacterTextSplitter from LangChain.
 - It tries to split at natural boundaries (headings, paragraphs)
@@ -29,10 +24,6 @@ from app.services import vector_store
 def create_text_splitter() -> RecursiveCharacterTextSplitter:
     """
     Create the text splitter with our chosen strategy.
-
-    We split at markdown headings first, then paragraphs, then lines.
-    This keeps related content (like a code block and its explanation)
-    together in the same chunk.
     """
     return RecursiveCharacterTextSplitter(
         chunk_size=settings.chunk_size,

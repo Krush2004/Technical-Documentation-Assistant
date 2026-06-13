@@ -1,6 +1,4 @@
 """
-API Routes — all the FastAPI endpoints.
-
 Endpoints:
 - POST /query         → Ask a question
 - POST /ingest        → Add new documents
@@ -48,7 +46,6 @@ feedback_store: list[dict] = []
 def query_endpoint(request: QueryRequest):
     """
     Submit a question and get an answer from the RAG pipeline.
-
     The system will:
     1. Analyze and rewrite your query
     2. Search for relevant documents
@@ -100,7 +97,6 @@ def query_endpoint(request: QueryRequest):
 def ingest_urls_endpoint(request: IngestURLRequest):
     """
     Ingest documents from URLs.
-
     Provide a list of URLs and the system will:
     1. Fetch each page
     2. Extract the main content
@@ -120,7 +116,6 @@ def ingest_urls_endpoint(request: IngestURLRequest):
 async def ingest_files_endpoint(files: list[UploadFile] = File(...)):
     """
     Ingest documents from file uploads.
-
     Upload one or more text/markdown files.
     """
     total_chunks = 0
@@ -161,7 +156,6 @@ async def ingest_files_endpoint(files: list[UploadFile] = File(...)):
 def list_documents_endpoint():
     """
     List all documents currently in the vector store.
-
     Shows the source file name and how many chunks each has.
     """
     all_docs = vector_store.get_all_documents()
@@ -193,7 +187,6 @@ def list_documents_endpoint():
 def feedback_endpoint(request: FeedbackRequest):
     """
     Submit feedback on an answer.
-
     Rate with 'thumbs_up' or 'thumbs_down' and optionally add a comment.
     """
     feedback_store.append({

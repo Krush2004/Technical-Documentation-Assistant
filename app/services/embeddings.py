@@ -1,10 +1,3 @@
-"""
-Embedding model wrapper.
-
-Uses sentence-transformers to generate embeddings locally.
-No API key needed — the model runs on your machine.
-"""
-
 from sentence_transformers import SentenceTransformer
 from app.core.config import settings
 
